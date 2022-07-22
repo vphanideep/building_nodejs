@@ -1,0 +1,22 @@
+prodUtiServer = "3.82.202.30"
+
+pipeline {
+    agent any
+
+    stages {
+        stage('git'){
+            steps {
+               git branch: 'main', url: 'https://github.com/vphanideep/building_nodejs.git'
+               sh 'mkdir demo2/demo1'
+            }
+        }
+        stage('remote'){
+            steps {
+               sshagent(['awsserver']) {
+                  ///  scp    
+                  sh 'whoami'
+            }
+            }
+        }
+    }
+}
