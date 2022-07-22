@@ -7,7 +7,15 @@ pipeline {
         stage('git'){
             steps {
                git branch: 'main', url: 'https://github.com/vphanideep/building_nodejs.git'
-               sh 'mkdir ${env.workspace}/demo21'
+            }
+        }
+        stage('Hello') {
+            steps {
+                sshagent(['awsserver']) {
+                    echo "Hello world"
+                    sh 'mkdir demo2/demo1'
+                    sh(returnStatus: true , script: "scp -r ${env.WORKSPACE}/build.sh awsserver@${prodUtiServer}:/home/ec2-user")
+                }
             }
         }
     }
