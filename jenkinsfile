@@ -13,7 +13,7 @@ pipeline {
             steps {
                 sshagent(['awsserver']) {
                     echo "Hello world"
-                    sh 'mkdir demo2/demo1'
+                    sh 'mkdir demo2'
                     sh(returnStatus: true , script: "scp -r ${env.WORKSPACE}/build.sh awsserver@${prodUtiServer}:/home/ec2-user")
                 }
             }
