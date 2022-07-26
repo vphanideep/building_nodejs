@@ -9,11 +9,12 @@ pipeline {
             }
         }
 
-        // stage('building nodejs app'){
-        //     steps {
-        //       bat 'npm install'
-        //     }
-        // }
+        stage('building nodejs app'){
+             steps {
+               // bat 'npm install'
+                 zip -r archivename.zip *
+             }
+         }
         
         stage('deploy'){
             steps{
