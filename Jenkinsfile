@@ -12,7 +12,7 @@ pipeline {
         stage('building nodejs app'){
              steps {
                // bat 'npm install'
-                 zip -r archivename.zip *
+                 zip -r Dockerfile *
              }
          }
         
