@@ -11,7 +11,7 @@ pipeline {
 
         stage('building nodejs app'){
              steps {
-               bat 'npm install'
+              // bat 'npm install'
              }
          }
         
