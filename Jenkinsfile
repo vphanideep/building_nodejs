@@ -12,6 +12,7 @@ pipeline {
         stage('building nodejs app'){
              steps {
                bat 'npm install'
+               echo "build is done"
              }
          }
         
