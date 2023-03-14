@@ -5,7 +5,7 @@ pipeline {
         stage('Hello') {
             steps {
               script {
-                cat  ${workspace}/current.txt | tr [:lower:] [:upper:]").trim() + ".zip" 
+                "cat  ${workspace}/current.txt | tr [:lower:] [:upper:]".trim() + ".zip" 
               }
             }
         }
