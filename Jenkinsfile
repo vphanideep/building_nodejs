@@ -8,6 +8,7 @@ pipeline {
 
             }
         }
+        
 
         stage('building nodejs app'){
              steps {
